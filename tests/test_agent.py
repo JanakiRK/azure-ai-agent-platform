@@ -1,4 +1,10 @@
 from src.agent import Agent
+import pytest
+
+
+def test_agent_rejects_empty_name():
+    with pytest.raises(ValueError, match="Agent name cannot be empty"):
+        Agent("   ")
 
 def test_agent_responds():
     agent = Agent("Azure Agent")
