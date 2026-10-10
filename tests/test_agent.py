@@ -23,3 +23,10 @@ def test_agent_uses_injected_model():
     response = agent.respond("Hello")
 
     assert response == "Fake response to: Hello"
+
+def test_agent_checks_status():
+    agent = Agent("Azure Agent")
+
+    result = agent.check_status()
+
+    assert result == "Agent platform is running"
