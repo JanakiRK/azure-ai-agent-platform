@@ -30,3 +30,13 @@ def test_agent_checks_status():
     result = agent.check_status()
 
     assert result == "Agent platform is running"
+
+def test_agent_uses_injected_status_tool():
+    def fake_status_tool():
+        return "Custom tool is working"
+
+    agent = Agent("Azure Agent", status_tool=fake_status_tool)
+
+    result = agent.check_status()
+
+    assert result == "Custom tool is working"
