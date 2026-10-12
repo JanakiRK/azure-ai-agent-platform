@@ -40,3 +40,18 @@ def test_agent_uses_injected_status_tool():
     result = agent.check_status()
 
     assert result == "Custom tool is working"
+
+def test_agent_routes_status_request_to_tool():
+    agent = Agent("Azure Agent")
+
+    result = agent.handle("What is the status?")
+
+    assert result == "Agent platform is running"
+
+
+def test_agent_routes_other_requests_to_model():
+    agent = Agent("Azure Agent")
+
+    result = agent.handle("Hello")
+
+    assert result == "Model response to: Hello"

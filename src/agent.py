@@ -17,3 +17,9 @@ class Agent:
 
     def check_status(self) -> str:
         return self.status_tool()
+
+    def handle(self, message: str) -> str:
+        if "status" in message.lower():
+            return self.check_status()
+
+        return self.respond(message)
