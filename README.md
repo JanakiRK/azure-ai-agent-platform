@@ -10,3 +10,4 @@ A local-first AI agent platform built to understand and demonstrate core Azure A
 - **Dependency injection:** The agent can receive a model or tool instead of creating a fixed one internally.
 - **Rule-based routing:** The current agent uses a keyword check to direct status requests to its status tool.
 - **Azure mapping:** This project demonstrates agent, model, tool, and routing concepts locally without requiring paid Azure resources.
+- **Testing strategy:** Test tools and agent routing independently to make failures easier to isolate.
